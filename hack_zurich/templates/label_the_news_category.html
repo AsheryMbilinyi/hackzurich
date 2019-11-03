@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Labelling the news</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body class="body">
+        <header class="header">
+            <img src="../media/images/logo.png"/>
+        </header>
+
+        <section class="section">
+            <nav class="nav-item-1">
+                <ul class="nav-item-1-ul">
+                    {% for company in object_list %}
+                        <h2>{{ company.name }}</h2>
+                        <h4>Sustainability Score: {{ company.score }}</h4>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+            <article class="article">
+                <ul>
+                    {% for company in object_list %}
+                        <img src="{{ company.words_frequency_image.url }}" alt="frequency">
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+
+    </body>
+</html>

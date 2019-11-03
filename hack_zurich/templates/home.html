@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body class="body">
+        <header class="header">
+            <img src="../media/images/logo.png"/>
+        </header>
+
+        <section class="section">
+            <nav class="nav">
+                <form action="{% url 'search_results' %}" method="get">
+                    <input name="q" type="text" placeholder="Enter Company Name">
+                    <button class="searchbutton" type="submit">
+                        Search
+                    </button>
+                </form>
+            </nav>
+        </section>
+
+    </body>
+</html>
